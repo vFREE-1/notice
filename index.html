@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>catf1ag | 公告</title>
+
+<link href="css/timeline.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<link rel="shortcut icon" href='images/logo_eye.png'>
+</head>
+<body>
+	<header>
+		<h1>catf1ag | 公告</h1>
+	</header>
+
+	<section id="cd-timeline" class="cd-container">
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-picture">
+				<img src="images/cd-icon-picture.svg" alt="Picture">
+			</div><!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>平台维护</h2>
+				<p>比赛将近，平台进行维护</p>
+				<a href="#" class="cd-read-more" style='background-color: green;'>维护完成</a>
+				<span class="cd-date">2022/5/5</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+
+		<div class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+				<img src="images/cd-icon-movie.svg" alt="Movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>两小时AK赛 来啦~</h2>
+				<p>我们好像进入了一个快餐化的时代，比如可以在某音看完一部电视剧或者电影，由此，我们想到，CTF比赛能不能也可以来一场以快餐化为主题的比赛？今天我们给各位师傅带来了主题为"两小时AK赛"的小型比赛，整体环绕着"题目简单，对大部分师傅友好"的概念出题！对最强大佬来说，这是一个时间上的比赛，对刚入门的新手师傅来说，这是对自己实力水平的一个小挑战，如题所示，题目的难度属于半个小时，一个小时两个小时之内就可以全部解决掉，非常easy~除此之外，“两小时AK赛”也是平台举办的第一个比赛，希望各位师傅赏个脸参加~</p>
+				<a href="https://ded3e4.baklib-free.com" class="cd-read-more">了解更多</a>
+				<span class="cd-date">2022/4/29</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+	</section> <!-- cd-timeline -->
+	
+<script>
+$(function(){
+	var $timeline_block = $('.cd-timeline-block');
+	//hide timeline blocks which are outside the viewport
+	$timeline_block.each(function(){
+		if($(this).offset().top > $(window).scrollTop()+$(window).height()*0.75) {
+			$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		}
+	});
+	//on scolling, show/animate timeline blocks when enter the viewport
+	$(window).on('scroll', function(){
+		$timeline_block.each(function(){
+			if( $(this).offset().top <= $(window).scrollTop()+$(window).height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+			}
+		});
+	});
+});
+</script>
+
+</body>
+</html>
